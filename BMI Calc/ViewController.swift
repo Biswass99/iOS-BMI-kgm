@@ -38,9 +38,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         return
                     }
                     else {
-                        if let heightNum = Double(heightStr) {
-                            if let weightNum = Double(weightStr) {
-                                let BMI: Double = (weightNum) / (heightNum*heightNum)
+                        // heightInch is the user input for height in inches
+                        if let heightInch = Double(heightStr) {
+                            // weightLb is the user input for weight in pounds
+                            if let weightLb = Double(weightStr) {
+                                
+                                // weightKg is weight in kilograms
+                                // convert from input pounds to kilograms
+                                let weightKg = weightLb/(2.204)
+                                
+                                // heightMtr is height in meters
+                                // convert from input inches to meters
+                                let heightMtr = heightInch/(39.37)
+                                
+                                let BMI: Double = (weightKg) / (heightMtr*heightMtr)
                                 BMIOutput.text = String(BMI)
                                 switch BMI {
                                 case 1..<15:
