@@ -9,10 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
-    // text field for weight input
+    // text field for weight input in pounds
     @IBOutlet weak var weightInput: UITextField!
     
-    // text field for height input
+    // text field for height input in inches
     @IBOutlet weak var heightInput: UITextField!
     
     // text field for BMI Output
@@ -21,8 +21,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // label for category output
     @IBOutlet weak var categoryOutput: UILabel!
     
+    // label for emoji output
+    @IBOutlet weak var EmojiLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+           self.weightInput.delegate = self
+           self.heightInput.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -55,21 +60,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
                                 BMIOutput.text = String(BMI)
                                 switch BMI {
                                 case 1..<15:
-                                    categoryOutput.text = "Very severely underweight"
+                                    categoryOutput.text = "Very severely underweight "
+                                    EmojiLabel.text = "😟"
                                 case 15...16:
-                                    categoryOutput.text = "Severely underweight"
+                                    categoryOutput.text = "Severely underweight "
+                                    EmojiLabel.text = "😞"
                                 case 16..<18.5:
-                                    categoryOutput.text = "Underweight"
+                                    categoryOutput.text = "Underweight "
+                                    EmojiLabel.text = "🙁"
                                 case 18.5..<25:
-                                    categoryOutput.text = "Normal"
+                                    categoryOutput.text = "Normal "
+                                    EmojiLabel.text = "😀"
                                 case 25..<30:
-                                    categoryOutput.text = "Overweight"
+                                    categoryOutput.text = "Overweight "
+                                    EmojiLabel.text = "🙁"
                                 case 30..<35:
-                                    categoryOutput.text = "Moderately obese"
+                                    categoryOutput.text = "Moderately obese "
+                                    EmojiLabel.text = "☹️"
                                 case 35..<40:
-                                    categoryOutput.text = "Severely obese"
+                                    categoryOutput.text = "Severely obese "
+                                    EmojiLabel.text = "😞"
                                 case 40..<60:
-                                    categoryOutput.text = "Very severely obese"
+                                    categoryOutput.text = "Very severely obese "
+                                    EmojiLabel.text = "😟"
                                 default:
                                     return
                                 }
@@ -83,7 +96,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
 }
     // hides the keyboard
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.weightInput.resignFirstResponder()
         self.heightInput.resignFirstResponder()
         return true
