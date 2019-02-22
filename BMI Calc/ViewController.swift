@@ -61,28 +61,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
                                 switch BMI {
                                 case 1..<15:
                                     categoryOutput.text = "Very severely underweight "
-                                    EmojiLabel.text = "😟"
+                                    EmojiLabel.text = "😩"
                                 case 15...16:
                                     categoryOutput.text = "Severely underweight "
-                                    EmojiLabel.text = "😞"
+                                    EmojiLabel.text = "😒"
                                 case 16..<18.5:
                                     categoryOutput.text = "Underweight "
-                                    EmojiLabel.text = "🙁"
+                                    EmojiLabel.text = "😕"
                                 case 18.5..<25:
                                     categoryOutput.text = "Normal "
                                     EmojiLabel.text = "😀"
                                 case 25..<30:
                                     categoryOutput.text = "Overweight "
-                                    EmojiLabel.text = "🙁"
+                                    EmojiLabel.text = "🤔"
                                 case 30..<35:
                                     categoryOutput.text = "Moderately obese "
-                                    EmojiLabel.text = "☹️"
+                                    EmojiLabel.text = "🙄"
                                 case 35..<40:
                                     categoryOutput.text = "Severely obese "
-                                    EmojiLabel.text = "😞"
+                                    EmojiLabel.text = "😟"
                                 case 40..<60:
                                     categoryOutput.text = "Very severely obese "
-                                    EmojiLabel.text = "😟"
+                                    EmojiLabel.text = "😮"
                                 default:
                                     return
                                 }
