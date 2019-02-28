@@ -2,9 +2,16 @@
 //  ViewController.swift
 //  BMI Calc
 //
-//  Created by Salil Biswas on 1/22/19.
+//  Created by Salil Biswas on 2/28/19.
 //  Copyright © 2019 user150447. All rights reserved.
 //
+
+// the app has user inputs for weight and height
+// user enters weight in pounds and height in inches
+// user clicks the "Calculate my BMI" button and clicks enter
+// the app shows BMI value, category and a different emoji for each category
+// app converts pounds to kilograms and converts inches to meters and then computes BMI value
+// switch is used to display the category and an emoji based on BMI value.
 
 import UIKit
 
